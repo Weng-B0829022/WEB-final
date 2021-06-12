@@ -22,7 +22,8 @@
 .nav-logo {
   color: #0004ff;
   align-items: center;
-  margin-left: 20px;
+  margin-left: 15px;
+  margin-right: 250px;
   cursor: pointer;
   text-decoration: none;
   font-size: 2rem;
@@ -30,6 +31,8 @@
 }
 
 .nav-menu {
+  font-family:Microsoft JhengHei;
+  font-size:26px;
   display: flex;
   list-style: none;
   text-align: center;
@@ -44,28 +47,24 @@
   border-bottom: 3px solid transparent;
 }
 
+.nav-links:hover{
+  color: 	#5555FF;
+}
+
 .nav-item {
   line-height: 40px;
   margin-right: 1rem;
 }
 
-.nav-item:after {
-  content: "";
-  display: block;
-  height: 3px;
-  width: 0;
-  background: transparent;
-  transition: width 0.7s ease, background-color 0.5s ease;
-}
-
-.nav-item:hover:after {
-  width: 100%;
-  background: #0004ff;
+.nav-item:hover{
+  border-radius:15px;
+  background: #F0F8FF;
+  transition: all .3s ease-Out;
 }
 
 .nav-item .active {
   color: #0004ff;
-  border: 1px solid #0004ff;
+  border: 0px solid #0004ff;
 }
 
 .nav-icon {

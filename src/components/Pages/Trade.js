@@ -3,7 +3,7 @@ import './Trade.css'
 
 export const Trade = () => {
   return (<div className="tradeback">
-  <div className="trade"><TradingViewWidget 
+  <div className="trade"><TradingViewWidget
           symbol="BITTREX:DOGEUSD"/>
   </div>
   </div>

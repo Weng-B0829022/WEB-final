@@ -12,6 +12,7 @@ import Grid from '@material-ui/core/Grid';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
+import { GoogleLogin } from "react-google-login"
 
 function Copyright() {
   return (
@@ -57,7 +58,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export const Login = () => {
+const responseGoogle = (response) => {
+  console.log(response);
+}
+
+export const Login = ( {setAuth} ) => {
   const classes = useStyles();
 
   return (
@@ -69,10 +74,20 @@ export const Login = () => {
           <Avatar className={classes.avatar}>
             <LockOutlinedIcon />
           </Avatar>
-          <Typography component="h1" variant="h5">
-            Sign in
-          </Typography>
-          <form className={classes.form} noValidate>
+          <GoogleLogin
+            clientId="396951739163-u35r65ujhuhe4egcq0dr22nhob9d92k4.apps.googleusercontent.com"
+            onSuccess={responseGoogle}
+            onFailure={responseGoogle}
+          />
+          <Box mt={5}>
+            <Copyright />
+          </Box>
+        </div>
+      </Grid>
+    </Grid>
+  );
+}
+/*
             <TextField
               variant="outlined"
               margin="normal"
@@ -107,25 +122,4 @@ export const Login = () => {
               className={classes.submit}
             >
               Sign In
-            </Button>
-            <Grid container>
-              <Grid item xs>
-                <Link href="#" variant="body2">
-                  Forgot password?
-                </Link>
-              </Grid>
-              <Grid item>
-                <Link href="#" variant="body2">
-                  {"Don't have an account? Sign Up"}
-                </Link>
-              </Grid>
-            </Grid>
-            <Box mt={5}>
-              <Copyright />
-            </Box>
-          </form>
-        </div>
-      </Grid>
-    </Grid>
-  );
-}
+            </Button>*/

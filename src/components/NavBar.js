@@ -2,9 +2,8 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./NavBar.css";
 
-function NavBar() {
+function NavBar( {isLogin} ) {
   const [click, setClick] = useState(false);
-
   const handleClick = () => setClick(!click);
   return (
     <>
@@ -60,7 +59,7 @@ function NavBar() {
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink
+              {isLogin ? <div>歡迎登入</div> : <NavLink
                 exact
                 to="/login"
                 activeClassName="active"
@@ -68,7 +67,7 @@ function NavBar() {
                 onClick={handleClick}
               >
                 Login
-              </NavLink>
+              </NavLink>}
             </li>
           </ul>
           <div className="nav-icon" onClick={handleClick}>
