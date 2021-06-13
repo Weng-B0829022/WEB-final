@@ -1,13 +1,13 @@
 import "./App.css";
 import React from 'react';
 import { useState } from "react";
-import NavBar from "./components/NavBar";
+import NavBar from "./components/Bar/NavBar";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Home } from "./components/Pages/Home";
-import  About  from "./components/Pages/About";
-import { Chatroom } from "./components/Pages/Chatroom";
-import { Trade } from "./components/Pages/Trade";
-import { Login } from "./components/Pages/Login";
+import About  from "./components/Pages/About/About";
+import Chatroom from "./components/Pages/Connect/Pushdb";
+import { Trade } from "./components/Pages/Trade/Trade";
+import { Login } from "./components/Pages/Login/Login";
 
 function App() {
   const [auth, setAuth] = useState(false);
