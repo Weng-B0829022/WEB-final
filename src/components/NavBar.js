@@ -39,12 +39,12 @@ function NavBar( {isLogin} ) {
             <li className="nav-item">
               <NavLink
                 exact
-                to="/blog"
+                to="/chatroom"
                 activeClassName="active"
                 className="nav-links"
                 onClick={handleClick}
               >
-                Blog
+                Chatroom
               </NavLink>
             </li>
             <li className="nav-item">
@@ -58,8 +58,14 @@ function NavBar( {isLogin} ) {
                 Trade
               </NavLink>
             </li>
-            <li className="nav-item">
-              {isLogin ? <div>歡迎登入</div> : <NavLink
+            
+              {isLogin ? 
+              <div className="login">
+                歡迎登入 {isLogin.profileObj.name}
+                <img src={isLogin.profileObj.imageUrl} width="35" height="35"/>
+              </div> :
+              <li className="nav-item">
+              <NavLink
                 exact
                 to="/login"
                 activeClassName="active"
@@ -67,8 +73,8 @@ function NavBar( {isLogin} ) {
                 onClick={handleClick}
               >
                 Login
-              </NavLink>}
-            </li>
+              </NavLink>
+            </li>}
           </ul>
           <div className="nav-icon" onClick={handleClick}>
             <i className={click ? "fas fa-times" : "fas fa-bars"}></i>

@@ -62,6 +62,13 @@
   transition: all .3s ease-Out;
 }
 
+.login{
+  line-height: 40px;
+  margin-right: 1rem;
+  padding: 0px;
+  margin: 0px;
+}
+
 .nav-item .active {
   color: #0004ff;
   border: 0px solid #0004ff;

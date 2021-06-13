@@ -58,13 +58,19 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const responseGoogle = (response) => {
-  console.log(response);
-}
 
-export const Login = ( {setAuth} ) => {
+
+
+export const Login = ( {set} ) => {         //記得是{set}
   const classes = useStyles();
- 
+
+  const responseGoogle = (response) => {
+    console.log(response);
+    set(function(){
+      return response;
+    });
+  }
+
   return (
     <Grid container component="main" className={classes.root}>
       <CssBaseline />
