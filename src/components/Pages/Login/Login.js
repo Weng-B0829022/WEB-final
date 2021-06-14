@@ -66,9 +66,7 @@ export const Login = ( {set} ) => {         //記得是{set}
 
   const responseGoogle = (response) => {
     console.log(response);
-    set(function(){
-      return response;
-    });
+    set(() => response);
   }
 
   return (
