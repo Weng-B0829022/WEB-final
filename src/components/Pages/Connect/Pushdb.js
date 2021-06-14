@@ -23,12 +23,14 @@ class Pushdb extends Component {
         username: this.state.auth.profileObj.name,
         time:e.target.ownerDocument.lastModified,
         message: this.state.value,
+        email: this.state.auth.profileObj.email,
       }):
       this.fire.database().ref('users/').push({
         ID: "null",
         username: "null",
         time:e.target.ownerDocument.lastModified,
         message: this.state.value,
+        email: "null",
       })
       alert("成功發送: "+ this.state.value)
       console.log(e)
