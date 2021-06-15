@@ -22,14 +22,14 @@ class Pushdb extends Component {
       this.fire.database().ref('users/').push({
         ID: this.state.auth.profileObj.googleId,
         username: this.state.auth.profileObj.name,
-        time: new Date().toLocaleTimeString(),
+        time: new Date().getFullYear() + "年" + (new Date().getMonth()+1) + "月" + new Date().getDate() + "日" + new Date().toLocaleTimeString(),
         message: this.state.value,
         email: this.state.auth.profileObj.email,
       }):
       this.fire.database().ref('users/').push({
         ID: "null",
         username: "null",
-        time: new Date().toLocaleTimeString(),
+        time: new Date().getFullYear() + "年" + (new Date().getMonth()+1) + "月" + new Date().getDate() + "日" + new Date().toLocaleTimeString(),
         message: this.state.value,
         email: "null",
       })
