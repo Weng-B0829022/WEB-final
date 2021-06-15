@@ -8,7 +8,8 @@ class Pushdb extends Component {
       this.fire = ""
       this.state={
         auth: props.isLogin,
-        value:""
+        value:"",
+        time:new Date().toLocaleTimeString()
       }
     }
     
@@ -21,14 +22,14 @@ class Pushdb extends Component {
       this.fire.database().ref('users/').push({
         ID: this.state.auth.profileObj.googleId,
         username: this.state.auth.profileObj.name,
-        time:e.target.ownerDocument.lastModified,
+        time: new Date().toLocaleTimeString(),
         message: this.state.value,
         email: this.state.auth.profileObj.email,
       }):
       this.fire.database().ref('users/').push({
         ID: "null",
         username: "null",
-        time:e.target.ownerDocument.lastModified,
+        time: new Date().toLocaleTimeString(),
         message: this.state.value,
         email: "null",
       })

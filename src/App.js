@@ -1,8 +1,8 @@
 import "./App.css";
 import React from 'react';
-import { useState, useLocation , useEffect} from "react";
+import { useState , useEffect} from "react";
 import NavBar from "./components/Bar/NavBar";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Switch, Route, useLocation} from "react-router-dom";
 import { Home } from "./components/Pages/Home";
 import About  from "./components/Pages/About/About";
 import Chatroom from "./components/Pages/Connect/Pushdb";
@@ -10,18 +10,20 @@ import { Trade } from "./components/Pages/Trade/Trade";
 import { Login } from "./components/Pages/Login/Login";
 import ReactGA from 'react-ga'
 
+
 ReactGA.initialize('UA-199361611-1');
 
 function App() {
   const [auth, setAuth] = useState("");
   const location = useLocation();
+
   useEffect(() => {
-    ReactGA.pageview(location.pathname + location.search);    // To Report Page View 
+    ReactGA.pageview(location.pathname + location.search)    // To Report Page View 
+    //console.log(location.pathname + location.search)
   }, [location]);
+
   return (
     <>
-      <Router>
-
         <NavBar isLogin={auth}/>
 
         <div className="pages">
@@ -41,7 +43,6 @@ function App() {
             </Route>
           </Switch>
         </div>
-      </Router>
     </>
   );
 }
