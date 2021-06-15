@@ -62,7 +62,7 @@ function NavBar( {isLogin} ) {
               {isLogin ? 
               <div className="login">
                 歡迎登入 {isLogin.profileObj.name}
-                <img src={isLogin.profileObj.imageUrl} width="35" height="35"/>
+                <img src={isLogin.profileObj.imageUrl} width="35" height="35" alt=" "/>
               </div> :
               <li className="nav-item">
               <NavLink

@@ -34,7 +34,7 @@ class UserGithub extends React.Component{
             <div>
             <h3>{this.state.username}</h3>
             <p>id={this.state.id}</p>
-            <img src={this.state.avatarUrl}/><p/>
+            <img src={this.state.avatarUrl} alt=" "/><p/>
             <a href={this.state.githubtUrl}>Github Link</a><p/>
             <a href={this.state.organizations_url}>organizations_url Link</a><p/>
             <a href={this.state.subscriptions_url}>subscriptions_url Link</a>

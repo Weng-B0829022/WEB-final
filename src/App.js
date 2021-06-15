@@ -1,17 +1,23 @@
 import "./App.css";
 import React from 'react';
-import { useState } from "react";
+import { useState, useLocation , useEffect} from "react";
 import NavBar from "./components/Bar/NavBar";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Home } from "./components/Pages/Home";
 import About  from "./components/Pages/About/About";
 import Chatroom from "./components/Pages/Connect/Pushdb";
-import FirebaseRead from "./components/Pages/Connect/firebaseApp";
 import { Trade } from "./components/Pages/Trade/Trade";
 import { Login } from "./components/Pages/Login/Login";
+import ReactGA from 'react-ga'
+
+ReactGA.initialize('UA-199361611-1');
 
 function App() {
   const [auth, setAuth] = useState("");
+  const location = useLocation();
+  useEffect(() => {
+    ReactGA.pageview(location.pathname + location.search);    // To Report Page View 
+  }, [location]);
   return (
     <>
       <Router>
